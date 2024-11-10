@@ -1,4 +1,6 @@
 defmodule Y2024.Day01 do
+  use EC.Day, no: 1
+
   @needed %{"A" => 0, "B" => 1, "C" => 3, "D" => 5}
 
   @doc """
@@ -38,11 +40,7 @@ defmodule Y2024.Day01 do
   """
   def part3(input), do: part2(input, 3)
 
-  def input(part) do
-    input_folder = __ENV__.file |> Path.dirname()
-
-    "#{input_folder}/input/day01/part#{part}.txt"
-    |> File.read!()
-    |> String.trim_trailing()
-  end
+  def part1_verify, do: input("part1") |> part1()
+  def part2_verify, do: input("part2") |> part2()
+  def part3_verify, do: input("part3") |> part3()
 end
